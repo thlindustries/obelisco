@@ -37,7 +37,7 @@ function callServer(nome,email,idade,curso,telefone,cep,logradouro,bairro,locali
     {
         //var obj = jQuery.parseJSON(data);
         var obj = data;
-        $("#teste").text(""+obj);
+        //$("#teste").text(""+obj);
         console.log(obj);
     });
 }

@@ -143,7 +143,7 @@
 
     $pessoa = new Info($nome,$vacinas,$doc,date('l jS \of F Y h:i:s A'));
 
-    var_dump($pessoa);
+    //var_dump($pessoa);
     //echo $criança;
 
     if(mysqli_connect_error())
