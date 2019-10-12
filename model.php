@@ -115,7 +115,7 @@
 
     #PARAMETROS DE CONEXAO COM O BANCO
     $host='35.224.87.218';
-    $dbuser='lokra';
+    $dbuser='thlinc';
     $dbpwd='Hotmail2#';
     //$dbuser='obelisco';
     //$dbpwd='Gmail2#';
