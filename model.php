@@ -167,4 +167,5 @@
         }
         #Tratando Query
     }
+    echo $sucesso;
 ?>
