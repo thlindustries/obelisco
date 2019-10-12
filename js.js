@@ -31,10 +31,10 @@ function registra_info()
 
 function callServer(nome,email,idade,curso,telefone,cep,logradouro,bairro,localidade,numero)
 {
-    var dados= {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:idade};
+    var dados= {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:numero};
 
     try {
-        $.post('http://thlinc.com/model.php',dados,function(data)
+        $.post('model.php',dados,function(data)
         {
             //var obj = jQuery.parseJSON(data);
             var obj = data;

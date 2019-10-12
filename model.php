@@ -43,7 +43,7 @@
         }
         function getCurso()
         {
-            return $this->telefone;        
+            return $this->curso;        
         }
         function getTelefone()
         {
@@ -77,45 +77,45 @@
         }
         function setEmail()
         {
-            $this->data = $data;        
+            $this->email = $email;        
         }
         function setIdade()
         {
-            $this->vaciina = $vaciina;        
+            $this->idade = $idade;        
         }
         function setCurso()
         {
-            $this->documento = $documento;        
+            $this->curso = $curso;        
         }
         function setTelefone()
         {
-            $this->vaciina = $vaciina;        
+            $this->telefone = $telefone;        
         }
         function setCep()
         {
-            $this->vaciina = $vaciina;        
+            $this->cep = $cep;        
         }
         function setLogradouro()
         {
-            $this->vaciina = $vaciina;        
+            $this->logradouro = $logradouro;        
         }
         function setBairro()
         {
-            $this->vaciina = $vaciina;        
+            $this->bairro = $bairro;        
         }
         function setLocalidade()
         {
-            $this->vaciina = $vaciina;        
+            $this->localidade = $localidade;        
         }
         function setNumero()
         {
-            $this->vaciina = $vaciina;        
+            $this->numero = $numero;        
         }
     }
 
     #PARAMETROS DE CONEXAO COM O BANCO
     $host='35.224.87.218';
-    $dbuser='thlinc';
+    $dbuser='lokra';
     $dbpwd='Hotmail2#';
     //$dbuser='obelisco';
     //$dbpwd='Gmail2#';
@@ -141,7 +141,7 @@
     $numero=$_POST['nu'];
     #PUXANDO DADOS DO HTML-->JS
 
-    $pessoa = new Info($nome,$vacinas,$doc,date('l jS \of F Y h:i:s A'));
+    $pessoa = new Info($nome,$email,$idade,$curso,$telefone,$cep,$logradouro,$bairro,$localidade,$numero);
 
     //var_dump($pessoa);
     //echo $criança;
