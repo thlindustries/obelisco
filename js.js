@@ -33,11 +33,18 @@ function callServer(nome,email,idade,curso,telefone,cep,logradouro,bairro,locali
 {
     var dados= {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:idade};
 
-    $.post('http://thlinc.com/model.php',dados,function(data)
-    {
-        //var obj = jQuery.parseJSON(data);
-        var obj = data;
-        $("#teste").text(""+obj);
-        console.log(obj);
-    });
+    try {
+        $.post('http://thlinc.com/model.php',dados,function(data)
+        {
+            //var obj = jQuery.parseJSON(data);
+            var obj = data;
+            $("#teste").text(""+obj);
+            console.log(obj);
+        });
+      }
+      catch(err) {
+        $("#teste").text(err.message);
+      }
+
+    
 }
