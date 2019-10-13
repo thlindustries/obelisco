@@ -1,0 +1,42 @@
+<section class="shadow p-5">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h4 class="text-primary mb-4">Endereço</h4>
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="cep">Cep</label>
+                <div class="input-group mb-3">
+                    <input type="text" name="cep" formControlName="cep" mask="00000-000" class="form-control">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-secondary" (click)="onFoundCEP()">Achar</button>
+                    </div>
+                </div>
+                <span class="text-danger" *ngIf="formControls.cep.touched && formControls.cep.hasError('required')">
+                    Campo obrigatório
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="logradouro">Logradouro</label>
+                <input type="text" name="logradouro" formControlName="logradouro" class="form-control">
+            </div>
+            <div class="form-group col-6">
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" formControlName="bairro" class="form-control">
+            </div>
+            <div class="form-group col-2">
+                <label for="uf">UF</label>
+                <input type="text" name="uf" formControlName="uf" class="form-control">
+            </div>
+            <div class="form-group col-4">
+                <label for="localidade">Localidade</label>
+                <input type="text" name="localidade" formControlName="localidade" class="form-control">
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-link" [routerLink]="['/home']"
+                    routerLinkActive="router-link-active">Voltar</button>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary float-right">Salvar</button>
+            </div>
+        </div>
+    </form>
+</section>
