@@ -1,0 +1,2 @@
+1- Da um IPCONFIG no seu pc e muda o IP do OnSubmit pro seu
+2- Coloca esse mesmo IP no arquivo proxy.config.js 
