@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: http://localhost:4200');  
     class Info
     {//date('l jS \of F Y h:i:s A');
         private $nome;
@@ -127,45 +128,53 @@
 
 
     //var dados= {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:numero};
-
+    $objeto=$_REQUEST['model'];
+    
+    
     #PUXANDO DADOS DO HTML-->JS
-    $nome=$_POST['no'];
-    $email=$_POST['em'];
-    $idade=$_POST['id'];
-    $curso=$_POST['cu'];
-    $telefone=$_POST['tel'];
-    $cep=$_POST['ce'];
-    $logradouro=$_POST['lo'];
-    $bairro=$_POST['ba'];
-    $localidade=$_POST['loc'];
-    $numero=$_POST['nu'];
+    $cep=$objeto['cep'];
+    $logradouro=$objeto['logradouro'];
+    $bairro=$objeto['bairro'];
+    $localidade=$objeto['localidade'];
+    // $nome=$objeto['no'];
+    // $email=$objeto['em'];
+    // $idade=$objeto['id'];
+    // $curso=$objeto['cu'];
+    // $telefone=$objeto['tel'];
+    // $numero=$objeto['nu'];
     #PUXANDO DADOS DO HTML-->JS
 
-    $pessoa = new Info($nome,$email,$idade,$curso,$telefone,$cep,$logradouro,$bairro,$localidade,$numero);
+    // $pessoa = new Info($nome,$email,$idade,$curso,$telefone,$cep,$logradouro,$bairro,$localidade,$numero);
 
     //var_dump($pessoa);
     //echo $criança;
 
-    if(mysqli_connect_error())
-    {
-        $erro = $conexao->error;
-        $conectado="Não conectou    ".$conexao->error;
-    }
-    else
-    {
-        $conectado="Conectou ao banco!";
+    // if(mysqli_connect_error())
+    // {
+    //     $erro = $conexao->error;
+    //     $conectado="Não conectou    ".$conexao->error;
+    // }
+    // else
+    // {
+    //     $conectado="Conectou ao banco!";
 
-        $query='insert into info (nome,email,idade,curso,telefone,cep,logradouro,bairro,localidade,numero) values ("'.$pessoa->getNome().'","'.$pessoa->getEmail().'","'.$pessoa->getIdade().'","'.$pessoa->getCurso().'","'.$pessoa->getTelefone().'","'.$pessoa->getCep().'","'.$pessoa->getLogradouro().'","'.$pessoa->getBairro().'","'.$pessoa->getLocalidade().'","'.$pessoa->getNumero().'");';
-        #Tratando Query
-        if(mysqli_query($conexao,$query))
-        {
-            $sucesso = "Cadastro efetuado com sucesso";
-        }
-        else
-        {
-            $sucesso = $conexao->error;
-        }
-        #Tratando Query
-    }
-    echo $sucesso;
+    //     $query='insert into info (nome,email,idade,curso,telefone,cep,logradouro,bairro,localidade,numero) values ("'.$pessoa->getNome().'","'.$pessoa->getEmail().'","'.$pessoa->getIdade().'","'.$pessoa->getCurso().'","'.$pessoa->getTelefone().'","'.$pessoa->getCep().'","'.$pessoa->getLogradouro().'","'.$pessoa->getBairro().'","'.$pessoa->getLocalidade().'","'.$pessoa->getNumero().'");';
+    //     #Tratando Query
+    //     if(mysqli_query($conexao,$query))
+    //     {
+    //         $sucesso = "Cadastro efetuado com sucesso";
+    //     }
+    //     else
+    //     {
+    //         $sucesso = $conexao->error;
+    //     }
+    //     #Tratando Query
+    // }
+    //echo $sucesso;
+    $teste = array($cep,$logradouro,$bairro,$localidade);
+    //$teste = var_dump($objeto);
+    echo json_encode($teste);
+    
+    //print_r(var_dump($objeto));
+    //echo $teste;
 ?>
