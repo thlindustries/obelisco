@@ -2,7 +2,7 @@
   "name": "frontend-obelisco",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng serve --proxy-config proxy.config.js",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",

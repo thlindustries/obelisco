@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   cepServiceUrl: 'https://viacep.com.br/ws',
-  obeliscoServiceUrl: 'http://thlinc.com'
+  obeliscoServiceUrl: 'http://192.168.240.203:8000'
 };
 
 /*

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EnderecoModel } from 'src/app/shared/models/Endereco.model';
 import { RefsService } from 'src/app/shared/helpers/refs.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-cadastro',
@@ -47,23 +46,13 @@ export class CadastroComponent implements OnInit {
     if (this.form.valid) {
       const model = this.form.getRawValue() as EnderecoModel;
 
-      var dados= {model:model};//{no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:numero};
+      const dados = { model };
+      // {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:numero};
 
-      try {
-          $.post('http://192.168.240.203:8000/model.php',dados,function(data)
-          {
-              var obj = jQuery.parseJSON(data);
-              //var obj = data;
-              //$("#teste").text(""+obj);
-              console.log(obj);
-             
-          });
-        }
-        catch(err) {
-          //$("#teste").text(err.message);
-        }
-
-      
+      this.refs.cadastroService.post(dados).subscribe(
+        res => console.log(res),
+        err => console.log(err)
+      );
     }
   }
 
