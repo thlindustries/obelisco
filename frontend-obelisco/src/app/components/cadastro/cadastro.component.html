@@ -1,5 +1,6 @@
 <section class="shadow p-5">
-    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">       -->
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()"name="testando">
         <h4 class="text-primary mb-4">Endereço</h4>
         <div class="row">
             <div class="form-group col-6">
