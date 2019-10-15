@@ -1,6 +1,4 @@
 <?php
-
-    //header('Access-Control-Allow-Origin: http://localhost:4200');  
     header('Access-Control-Allow-Origin: *');  
     class Info
     {//date('l jS \of F Y h:i:s A');
