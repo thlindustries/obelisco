@@ -1,5 +1,25 @@
 <?php
-    header('Access-Control-Allow-Origin: *');  
+    header('Access-Control-Allow-Origin: http://localhost:4200');  
+    // Allow from any origin
+    if (isset($_SERVER['HTTP_ORIGIN'])) {
+        header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Max-Age: 43200');    // cache for 0.5 day
+    }
+
+    // Access-Control headers are received during OPTIONS requests
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
+
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+            header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+
+        exit(0);
+    }
+
+    //echo "You have CORS!";
     class Info
     {//date('l jS \of F Y h:i:s A');
         private $nome;
@@ -115,27 +135,36 @@
     }
 
     #PARAMETROS DE CONEXAO COM O BANCO
-    $host='';
-    $dbuser='obelisco';
-    $dbpwd='Google2#';
+    // $host='';
+    // $dbuser='obelisco';
+    // $dbpwd='Google2#';
     //$dbuser='obelisco';
     //$dbpwd='Gmail2#';
-    $database='info_cliente';
+    // $database='info_cliente';
 
-    $conexao= mysqli_connect($host,$dbuser,$dbpwd,$database);
-    $conectado="ZERADO";
+    // $conexao= mysqli_connect($host,$dbuser,$dbpwd,$database);
+    // $conectado="ZERADO";
     #PARAMETROS DE CONEXAO COM O BANCO
 
 
     //var dados= {no:nome,em:email,id:idade,cu:curso,tel:telefone,ce:cep,lo:logradouro,ba:bairro,loc:localidade,nu:numero};
-    $objeto=$_REQUEST['model'];
+    //$objeto=$_REQUEST['model'];
+    // Takes raw data from the request
+    $json = file_get_contents('php://input');
+    $objeto = json_encode($json);
+    $convertido=json_decode($objeto);
+
+    $convertido2=json_decode($convertido,true);
     
+
+    // Converts it into a PHP object
+    //$data = var_dump($json);
     
     #PUXANDO DADOS DO HTML-->JS
-    $cep=$objeto['cep'];
-    $logradouro=$objeto['logradouro'];
-    $bairro=$objeto['bairro'];
-    $localidade=$objeto['localidade'];
+    $cep=$convertido2['cep'];
+    $logradouro=$convertido2['logradouro'];
+    $bairro=$convertido2['bairro'];
+    $localidade=$convertido2['localidade'];
     // $nome=$objeto['no'];
     // $email=$objeto['em'];
     // $idade=$objeto['id'];
@@ -172,9 +201,13 @@
     // }
     //echo $sucesso;
     $teste = array($cep,$logradouro,$bairro,$localidade);
-    //$teste = var_dump($objeto);
-    echo json_encode($teste);
+    //$teste = json_encode(var_dump($objeto));
+    //$teste = json_decode($objeto);
+    //echo json_encode($teste);
     
     //print_r(var_dump($objeto));
-    //echo $teste;
+    //echo "oi";
+    //echo json_encode(var_dump($teste));
+    echo json_encode($teste);
+    //echo $convertido;
 ?>
