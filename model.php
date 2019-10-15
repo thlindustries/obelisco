@@ -1,5 +1,7 @@
 <?php
-    header('Access-Control-Allow-Origin: http://localhost:4200');  
+
+    //header('Access-Control-Allow-Origin: http://localhost:4200');  
+    header('Access-Control-Allow-Origin: *');  
     class Info
     {//date('l jS \of F Y h:i:s A');
         private $nome;
@@ -116,8 +118,8 @@
 
     #PARAMETROS DE CONEXAO COM O BANCO
     $host='';
-    $dbuser='thlinc';
-    $dbpwd='Hotmail2#';
+    $dbuser='obelisco';
+    $dbpwd='Google2#';
     //$dbuser='obelisco';
     //$dbpwd='Gmail2#';
     $database='info_cliente';
