@@ -165,12 +165,12 @@
     $logradouro=$convertido2['logradouro'];
     $bairro=$convertido2['bairro'];
     $localidade=$convertido2['localidade'];
-    // $nome=$objeto['no'];
-    // $email=$objeto['em'];
-    // $idade=$objeto['id'];
-    // $curso=$objeto['cu'];
-    // $telefone=$objeto['tel'];
-    // $numero=$objeto['nu'];
+    $nome=$convertido2['nome'];
+    $email=$convertido2['email'];
+    $idade=$convertido2['idade'];
+    $curso=$convertido2['curso'];
+    $telefone=$convertido2['telefone'];
+    $numero=$convertido2['numero'];
     #PUXANDO DADOS DO HTML-->JS
 
     // $pessoa = new Info($nome,$email,$idade,$curso,$telefone,$cep,$logradouro,$bairro,$localidade,$numero);
@@ -200,7 +200,7 @@
     //     #Tratando Query
     // }
     //echo $sucesso;
-    $teste = array($cep,$logradouro,$bairro,$localidade);
+    $teste = array("Ta tudo funcionando, se alterar algo nao deleta, comenta! ",$cep,$logradouro,$bairro,$localidade,$nome,$email,$idade,$curso,$telefone,$numero);
     //$teste = json_encode(var_dump($objeto));
     //$teste = json_decode($objeto);
     //echo json_encode($teste);
@@ -208,6 +208,7 @@
     //print_r(var_dump($objeto));
     //echo "oi";
     //echo json_encode(var_dump($teste));
-    echo json_encode($teste);
+    //echo json_decode($objeto);
     //echo $convertido;
+    echo json_encode($teste);
 ?>
