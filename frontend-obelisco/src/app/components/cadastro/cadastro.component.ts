@@ -10,6 +10,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class CadastroComponent implements OnInit {
 
+  public submitted = false;
   public initialModel: EnderecoModel;
   public form: FormGroup;
 
@@ -59,6 +60,8 @@ export class CadastroComponent implements OnInit {
 
 
   public onSubmit(): void {
+    this.submitted = true;
+
     if (this.form.valid) {
       this.refs.cadastroService.post(this.form.getRawValue()).subscribe(
         res => console.log(res),
