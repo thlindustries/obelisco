@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EnderecoModel } from 'src/app/shared/models/Endereco.model';
 import { RefsService } from 'src/app/shared/helpers/refs.service';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserModel } from 'src/app/shared/models/User.model';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CadastroComponent implements OnInit {
 
-  //public submitted = false;
+  public submitted = false;
   public initialModel: EnderecoModel;
   public form: FormGroup;
 
@@ -61,15 +61,13 @@ export class CadastroComponent implements OnInit {
 
 
   public onSubmit(): void {
-    //this.submitted = true;
-   
+    this.submitted = true;
+
 
     if (this.form.valid) {
-      //const model= this.form.getRawValue() as EnderecoModel;
-      //console.log(this.form.getRawValue());
-      
+      const model = this.form.getRawValue() as UserModel;
 
-      this.refs.cadastroService.post(this.form.getRawValue()).subscribe(
+      this.refs.cadastroService.post(model).subscribe(
         res => console.log(res),
         err => console.log(err)
       );

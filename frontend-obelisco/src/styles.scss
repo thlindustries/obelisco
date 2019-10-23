@@ -1,4 +1,16 @@
+@import 'styles/variables';
+
+* {
+    font-family: $font-family;
+}
+
+html,
+body {
+    background-color: $base-bg;
+    width: 100%;
+}
+
 .required>label:after {
-    content:" *"; 
+    content: " *";
     color: red;
 }

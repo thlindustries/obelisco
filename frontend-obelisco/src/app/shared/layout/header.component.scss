@@ -1,0 +1,14 @@
+.logo {
+    max-width: 100px;
+}
+
+li {
+    a {
+        padding: 2px;
+    }
+
+    &.active {
+        border-bottom: green solid 0.5px;
+
+    }
+}
