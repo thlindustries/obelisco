@@ -10,6 +10,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IConfig } from 'ngx-mask';
 import { HeaderComponent } from './shared/layout/header.component';
 import { FooterComponent } from './shared/layout/footer.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
@@ -24,7 +26,9 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [RefsService, HttpClientService, CepService],
   bootstrap: [AppComponent]

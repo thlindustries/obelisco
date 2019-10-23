@@ -10,7 +10,7 @@ const routes: Routes = [
     path: 'evento', loadChildren: () => import('./components/evento/evento.module').then(m => m.EventoModule)
   },
   {
-    path: 'cadastro', loadChildren: () => import('./components/cadastro/cadastro.module').then(m => m.CadastroModule)
+    path: 'contato', loadChildren: () => import('./components/cadastro/cadastro.module').then(m => m.CadastroModule)
   }
 ];
 

@@ -7,10 +7,33 @@
 html,
 body {
     background-color: $base-bg;
-    width: 100%;
+}
+
+body {
+    padding-top: 60px;
 }
 
 .required>label:after {
     content: " *";
     color: red;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.elementor-divider-separator {
+    border-top: 4px solid #ffffff;
+    width: 12%;
+
+    &.e-white {
+        border-color: #ffffff !important;
+    }
+
+    &.e-muted {
+        border-color: #6c757d !important;
+    }
 }

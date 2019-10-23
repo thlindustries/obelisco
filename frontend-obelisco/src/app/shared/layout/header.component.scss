@@ -7,8 +7,16 @@ li {
         padding: 2px;
     }
 
-    &.active {
+    &.active,
+    &:hover {
         border-bottom: green solid 0.5px;
-
     }
+    
+    margin-left: 10px;
+}
+
+nav {
+    height: 60px;
+    max-height: 60px;
+    min-height: 60px;
 }
