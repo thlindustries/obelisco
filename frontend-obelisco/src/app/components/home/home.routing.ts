@@ -11,4 +11,11 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class HomeRouting { }
+
+export class HomeRouting { 
+    
+  onActivate(event: Event) {
+    window.scrollTo(0, 0);
+  }
+
+}
