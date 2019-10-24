@@ -1,13 +1,10 @@
-import { Component, OnInit, HostListener, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-
+import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-
 
 export class HomeComponent implements OnInit {
 
@@ -17,8 +14,6 @@ export class HomeComponent implements OnInit {
   public missao: ElementRef;
   @ViewChild('valores', { static: false })
   public valores: ElementRef;
-
-  public cont = 0;
 
   constructor() { }
 

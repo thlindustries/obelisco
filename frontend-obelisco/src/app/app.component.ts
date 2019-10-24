@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend-obelisco';
+  public onActivate(): void { window.scroll(0, 0); }
 }
