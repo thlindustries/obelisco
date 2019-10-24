@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CadastroRouting } from './home.routing';
+import { CadastroRouting } from './cadastro.routing';
 import { CadastroComponent } from './cadastro.component';
 import { CadastroService } from './shared/cadastro.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';

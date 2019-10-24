@@ -11,49 +11,29 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-  
+  @ViewChild('objetivo', { static: false })
+  public objetivo: ElementRef;
+  @ViewChild('missao', { static: false })
+  public missao: ElementRef;
+  @ViewChild('valores', { static: false })
+  public valores: ElementRef;
+
+  public cont = 0;
+
   constructor() { }
 
-  
-  @ViewChild('objetivo', {static: false}) objetivo: ElementRef;
-  @ViewChild('missao', {static: false}) missao: ElementRef;
-  @ViewChild('servicos', {static: false}) servicos: ElementRef;
+  public ngOnInit(): void { window.scrollTo(0, 0); }
 
-  ngOnInit() {
-    window.scrollTo(0,0);
-  }
-  ngAfterViewInit()
-  {
-    
-  }
+  @HostListener('window:scroll', ['$event'])
+  public onWindowcheckScroll(): void {
+    const scrollPosition = window.pageYOffset - 200;
 
-  cont=0;
-  @HostListener('window:scroll', [])
-  onWindowScroll() 
-  {
-    if(this.cont<60)
-    {
-      this.cont=this.cont+1;
-    }
-    if(this.cont>=15)
-    {
-      this.teste(this.cont)
+    if (scrollPosition <= this.objetivo.nativeElement.offsetTop / 2) {
+      this.objetivo.nativeElement.setAttribute('class', 'col-lg-8 text-center bounceIn animated');
+    } else if (scrollPosition <= this.missao.nativeElement.offsetTop / 2) {
+      this.missao.nativeElement.setAttribute('class', 'col-lg-8 text-center bounceIn animated');
+    } else if (scrollPosition <= this.valores.nativeElement.offsetTop / 2) {
+      this.valores.nativeElement.setAttribute('class', 'container bounceIn animated');
     }
   }
-  teste(cont) 
-  {
-    if(cont>=15)
-    {
-      this.objetivo.nativeElement.setAttribute("class", "col-lg-8 text-center bounceIn animated");
-    }
-    if(cont>=40)
-    {
-      this.missao.nativeElement.setAttribute("class", "row justify-content-center bounceIn animated");
-    }
-    if(cont>=50)
-    {
-      this.servicos.nativeElement.setAttribute("class", "page-section bg-light bounceInUp animated");
-    }
-  }
-
 }

@@ -34,7 +34,7 @@ export class CadastroComponent implements OnInit {
   constructor(private refs: RefsService) { }
 
   ngOnInit() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     this.buildForm(new EnderecoModel());
   }
 

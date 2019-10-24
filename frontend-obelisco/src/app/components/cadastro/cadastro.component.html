@@ -1,119 +1,121 @@
-<div class="pad"></div>
-<div class="row align-items-center bg p-5">
-    <div class="col-lg-4 col-md-12 col-sm-12 mb-5">
-        <h1 class="text-white font-weight-bold e-white">FAÇA SEU CADASTRO</h1>
-        <div class="elementor-divider-separator"></div>
-    </div>
-    <div class="col-lg-8 col-md-12 col-sm-12">
-        <section class="shadow bg-white p-5 bounceInRight animated">
-            <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()" name="testando">
-                <h4 class="text-success mb-4">Dados Pessoais</h4>
-                <div class="row">
-                    <div class="form-group col-lg-9 col-md-7 col-sm-12 required">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" formControlName="nome" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.nome.touched) && formControls.nome.hasError('required')">
-                            Campo obrigatório
-                        </span>
-                    </div>
-                    <div class="form-group col-lg-3 col-md-5 col-sm-12 required">
-                        <label for="idade">Idade</label>
-                        <input type="text" name="idade" formControlName="idade" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.idade.touched) && formControls.idade.hasError('required')">
-                            Campo obrigatório
-                        </span>
-                    </div>
-                    <div class="form-group col-lg-6 col-md-4 col-sm-12 required">
-                        <label for="curso">Curso</label>
-                        <input type="text" name="curso" formControlName="curso" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.curso.touched) && formControls.curso.hasError('required')">
-                            Campo obrigatório
-                        </span>
-                    </div>
-                    <div class="form-group col-lg-3 col-md-4 col-sm-12 required">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" formControlName="email" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.email.touched) && formControls.email.hasError('required')">
-                            Campo obrigatório
-                        </span>
-                        <span class="text-danger" *ngIf="(submitted || formControls.email.touched) && formControls.email.hasError('email')">
-                            Email inválido
-                        </span>
-                    </div>
-                    <div class="form-group col-lg-3 col-md-4 col-sm-12 required">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" name="telefone" formControlName="telefone" mask="(00) 00000-0000" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.telefone.touched) && formControls.telefone.hasError('required')">
-                            Campo obrigatório
-                        </span>
-                    </div>
-                </div>
-
-                <h4 class="text-success mb-4 mt-4">Endereço</h4>
-                <div class="row">
-                    <div class="form-group col-lg-4 col-md-5 col-sm-12 required">
-                        <label for="cep">Cep</label>
-                        <div class="input-group">
-                            <input type="text" name="cep" formControlName="cep" mask="00000-000" class="form-control">
-                            <div class="input-group-prepend">
-                                <button type="button" class="btn btn-secondary" (click)="onFoundCEP()">Achar</button>
-                            </div>
+<section>
+    <div class="pad"></div>
+    <div class="row align-items-center bg p-5">
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-5 bounceInUp animated">
+            <h1 class="text-white font-weight-bold e-white">FAÇA SEU CADASTRO</h1>
+            <div class="elementor-divider-separator"></div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <section class="shadow bg-white p-5 bounceInRight animated">
+                <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()" name="testando">
+                    <h4 class="text-success mb-4">Dados Pessoais</h4>
+                    <div class="row">
+                        <div class="form-group col-lg-9 col-md-7 col-sm-12 required">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" formControlName="nome" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.nome.touched) && formControls.nome.hasError('required')">
+                                Campo obrigatório
+                            </span>
                         </div>
-                        <span class="text-danger" *ngIf="(submitted || formControls.cep.touched) && formControls.cep.hasError('required')">
-                            Campo obrigatório
-                        </span>
+                        <div class="form-group col-lg-3 col-md-5 col-sm-12 required">
+                            <label for="idade">Idade</label>
+                            <input type="text" name="idade" formControlName="idade" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.idade.touched) && formControls.idade.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-4 col-sm-12 required">
+                            <label for="curso">Curso</label>
+                            <input type="text" name="curso" formControlName="curso" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.curso.touched) && formControls.curso.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-4 col-sm-12 required">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" formControlName="email" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.email.touched) && formControls.email.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                            <span class="text-danger" *ngIf="(submitted || formControls.email.touched) && formControls.email.hasError('email')">
+                                Email inválido
+                            </span>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-4 col-sm-12 required">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" name="telefone" formControlName="telefone" mask="(00) 00000-0000" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.telefone.touched) && formControls.telefone.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                        </div>
                     </div>
-                    <div class="form-group col-lg-6 col-md-7 col-sm-12">
-                        <label for="logradouro">Logradouro</label>
-                        <input type="text" name="logradouro" formControlName="logradouro" class="form-control">
+
+                    <h4 class="text-success mb-4 mt-4">Endereço</h4>
+                    <div class="row">
+                        <div class="form-group col-lg-4 col-md-5 col-sm-12 required">
+                            <label for="cep">Cep</label>
+                            <div class="input-group">
+                                <input type="text" name="cep" formControlName="cep" mask="00000-000" class="form-control">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-secondary" (click)="onFoundCEP()">Achar</button>
+                                </div>
+                            </div>
+                            <span class="text-danger" *ngIf="(submitted || formControls.cep.touched) && formControls.cep.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-7 col-sm-12">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" name="logradouro" formControlName="logradouro" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-2 col-md-3 col-sm-12">
+                            <label for="numero">Número</label>
+                            <input type="text" name="numero" formControlName="numero" class="form-control">
+                            <span class="text-danger" *ngIf="(submitted || formControls.numero.touched) && formControls.numero.hasError('required')">
+                                Campo obrigatório
+                            </span>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-4 col-sm-12">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" name="bairro" formControlName="bairro" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-2 col-md-2 col-sm-12">
+                            <label for="uf">UF</label>
+                            <input type="text" name="uf" formControlName="uf" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-4 col-md-3 col-sm-12">
+                            <label for="localidade">Localidade</label>
+                            <input type="text" name="localidade" formControlName="localidade" class="form-control">
+                        </div>
                     </div>
-                    <div class="form-group col-lg-2 col-md-3 col-sm-12">
-                        <label for="numero">Número</label>
-                        <input type="text" name="numero" formControlName="numero" class="form-control">
-                        <span class="text-danger" *ngIf="(submitted || formControls.numero.touched) && formControls.numero.hasError('required')">
-                            Campo obrigatório
-                        </span>
+                    <div class="row w-100 mt-5">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success btn-block">Enviar</button>
+                        </div>
                     </div>
-                    <div class="form-group col-lg-6 col-md-4 col-sm-12">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" name="bairro" formControlName="bairro" class="form-control">
-                    </div>
-                    <div class="form-group col-lg-2 col-md-2 col-sm-12">
-                        <label for="uf">UF</label>
-                        <input type="text" name="uf" formControlName="uf" class="form-control">
-                    </div>
-                    <div class="form-group col-lg-4 col-md-3 col-sm-12">
-                        <label for="localidade">Localidade</label>
-                        <input type="text" name="localidade" formControlName="localidade" class="form-control">
-                    </div>
-                </div>
-                <div class="row w-100 mt-5">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success btn-block">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </section>          
-    </div>  
-</div>
-<div class="row align-items-center bg-light p-5">
-    <div class="col-lg-8 col-md-12 col-sm-12">
-        <section class="shadow bg-white bounceInUp animated">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.6801656365255!2d-47.129279684497064!3d-22.851319585040166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c75cb9fc15b1%3A0x28f6c52a0bde5160!2sCTI%20Renato%20Archer!5e0!3m2!1spt-BR!2sbr!4v1570313421036!5m2!1spt-BR!2sbr" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </section>
+                </form>
+            </section>          
+        </div>  
     </div>
-    <div class="col-lg-4 col-md-12 col-sm-12 mt-5 bounceInUp animated">
-        <h1 class="text-muted font-weight-bold">ENTRE EM CONTATO</h1>
-        <div class="elementor-divider-separator e-muted"></div>
-        <div class="row mt-5">
-            <div class="col-lg-6 col-md-6 col-sm-12 ml-auto text-center mb-5 mb-5 mb-lg-0">
-                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                <div>(19) 3746-6128</div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mr-auto text-center text-muted">
-                <i class="fas fa-envelope fa-3x mb-3"></i>
-                <a class="d-block" href="mailto:ifsp@campinas.com">ifsp@campinas.com</a>
+    <div class="row align-items-center bg-light p-5">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <section class="shadow bg-white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.6801656365255!2d-47.129279684497064!3d-22.851319585040166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c75cb9fc15b1%3A0x28f6c52a0bde5160!2sCTI%20Renato%20Archer!5e0!3m2!1spt-BR!2sbr!4v1570313421036!5m2!1spt-BR!2sbr" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </section>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 mt-5">
+            <h1 class="text-muted font-weight-bold">ENTRE EM CONTATO</h1>
+            <div class="elementor-divider-separator e-muted"></div>
+            <div class="row mt-5">
+                <div class="col-lg-6 col-md-6 col-sm-12 ml-auto text-center mb-5 mb-5 mb-lg-0">
+                    <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                    <div>(19) 3746-6128</div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 mr-auto text-center text-muted">
+                    <i class="fas fa-envelope fa-3x mb-3"></i>
+                    <a class="d-block" href="mailto:ifsp@campinas.com">ifsp@campinas.com</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

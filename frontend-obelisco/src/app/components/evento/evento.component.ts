@@ -9,8 +9,6 @@ export class EventoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    window.scrollTo(0,0);
-  }
+  public ngOnInit(): void { window.scrollTo(0, 0); }
 
 }
