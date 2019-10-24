@@ -28,11 +28,13 @@ export class HomeComponent implements OnInit {
   public onWindowcheckScroll(): void {
     const scrollPosition = window.pageYOffset - 200;
 
-    if (scrollPosition <= this.objetivo.nativeElement.offsetTop / 2) {
+    if (scrollPosition >= this.objetivo.nativeElement.offsetTop / 2) {
       this.objetivo.nativeElement.setAttribute('class', 'col-lg-8 text-center bounceIn animated');
-    } else if (scrollPosition <= this.missao.nativeElement.offsetTop / 2) {
+    }
+    if (scrollPosition >= this.missao.nativeElement.offsetTop / 2) {
       this.missao.nativeElement.setAttribute('class', 'col-lg-8 text-center bounceIn animated');
-    } else if (scrollPosition <= this.valores.nativeElement.offsetTop / 2) {
+    }
+    if (scrollPosition >= this.valores.nativeElement.offsetTop / 2) {
       this.valores.nativeElement.setAttribute('class', 'container bounceIn animated');
     }
   }
