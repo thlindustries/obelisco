@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void { window.scrollTo(0, 0); }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', [])
   public onWindowcheckScroll(): void {
     const scrollPosition = window.pageYOffset - 200;
 
