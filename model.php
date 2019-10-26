@@ -1,4 +1,6 @@
 <?php
+
+//php -S localhost:8000
     header('Access-Control-Allow-Origin: http://localhost:4200');  
     // Allow from any origin
     if (isset($_SERVER['HTTP_ORIGIN'])) {
