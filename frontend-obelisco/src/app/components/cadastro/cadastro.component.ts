@@ -57,10 +57,13 @@ export class CadastroComponent implements OnInit {
     this.form = this.refs.formBuilder.group(this.formControls);
   }
 
-
+/**
+ * Realiza validação do formulário antes de submitá-lo e salva no banco os dados preenchidos no form via serviço
+ * @param form
+ * @return void
+ */
   public onSubmit(): void {
     this.submitted = true;
-
 
     if (this.form.valid) {
       const model = this.form.getRawValue() as UserModel;
@@ -72,6 +75,11 @@ export class CadastroComponent implements OnInit {
     }
   }
 
+  /**
+   * Seta os campos do endereço a partir do CEP informado
+   * @param cep
+   * @return void
+   */
   public onFoundCEP(): void {
     const cep = this.formControls.cep.value;
 

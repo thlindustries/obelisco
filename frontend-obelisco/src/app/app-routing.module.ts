@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Controla a rota dos links, direcionando para seus devidos módulos
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
