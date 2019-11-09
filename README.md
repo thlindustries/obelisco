@@ -13,7 +13,7 @@ Em ambiente Linux:
 
 - Acessar a pasta “backend-obelisco” e executar o comando:
 ```bash
-php -s localhost:8080.
+php -s localhost:8080
 ```
 
 Em ambiente Windows:
@@ -35,7 +35,7 @@ Para o desenvolvimento em ambiente local, realizar a alteração do valor da var
 ## Comando para gerar arquivos no Angular:
 Para a geração de componentes, serviços ou módulos. Basta a execução do comando:
 ```bash
-ng generate {c/s/m} [nome_do_arquivo].
+ng generate {c/s/m} [nome_do_arquivo]
 ```
 
 ## Workflow de desenvolvimento:
