@@ -1,4 +1,4 @@
-#Configuração de ambiente
+# Configuração de ambiente
 Repositório: https://github.com/thlindustries/obelisco;
 Passos para configuração do Angular:
 abrir um prompt de comandos na pasta “frontend-obelisco” e executar o comando npm install;
@@ -13,7 +13,7 @@ iniciar o XAMPP.
 Configurações MySQL:
 Instalar o MySQL Workbench.
 
-#Desenvolvimento
+# Desenvolvimento
 Para o desenvolvimento em ambiente local, realizar a alteração do valor da variável “obeliscoServiceUrl”, no arquivo environment.ts (caminho: “frontend-obelisco/src/environment”);
 Comando para gerar arquivos no Angular::
 Para a geração de componentes, serviços ou módulos. Basta a execução do comando ng generate {c/s/m} [nome_do_arquivo].
