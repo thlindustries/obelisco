@@ -7,19 +7,20 @@
 
 ## Configurações para o PHP:
 
+- Adicionar no arquivo .env as strings de conexão para o banco.
+
 Em ambiente Linux:
 
-- acessar a pasta “backend-obelisco” e executar o comando php -s localhost:8080.
+- Acessar a pasta “backend-obelisco” e executar o comando php -s localhost:8080.
 
 Em ambiente Windows:
 
-- necessária a instalação do XAMPP;
+- Necessária a instalação do XAMPP;
 
-adicionar a model.php na pasta “htdocs” do XAMPP;
+- Adicionar a model.php na pasta “htdocs” do XAMPP;
 
-- iniciar o XAMPP.
+- Iniciar o XAMPP.
 
-- Adicionar no arquivo .env as strings de conexão para o banco.
 
 ## Configurações MySQL:
 
