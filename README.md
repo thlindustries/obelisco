@@ -1,11 +1,15 @@
 # Configuração de ambiente
-Repositório: https://github.com/thlindustries/obelisco;
-Passos para configuração do Angular:
-abrir um prompt de comandos na pasta “frontend-obelisco” e executar o comando npm install;
+
+## Passos para configuração do Angular:
+Abrir um prompt de comandos na pasta “frontend-obelisco” e executar o comando npm install;
+
 executar o comando ng serve para executar a aplicação.
-Configurações para o PHP:
+
+## Configurações para o PHP:
+
 Em ambiente Linux:
 acessar a pasta “backend-obelisco” e executar o comando php -s localhost:8080.
+
 Em ambiente Windows:
 necessária a instalação do XAMPP;
 adicionar a model.php na pasta “htdocs” do XAMPP;
