@@ -48,4 +48,4 @@ ng generate {c/s/m} [nome_do_arquivo]
 - O back-end recebe o objeto e realiza as regras de negócio, salvando, deletando, atualizando e lendo do banco de dados.
 	
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[thlindustries](http://thlinc.com/)
