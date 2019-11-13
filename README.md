@@ -13,7 +13,7 @@ Em ambiente Linux:
 
 - Acessar a pasta “backend-obelisco” e executar o comando:
 ```bash
-php -s localhost:8080
+php -S localhost:8080
 ```
 
 Em ambiente Windows:
@@ -30,10 +30,10 @@ Em ambiente Windows:
 - Instalar o MySQL Workbench.
 
 # Desenvolvimento
-Para o desenvolvimento em ambiente local, realizar a alteração do valor da variável “obeliscoServiceUrl”, no arquivo environment.ts (caminho: “frontend-obelisco/src/environment”);
+Para o desenvolvimento em ambiente local, realizar a alteração do valor da variável “obeliscoServiceUrl”, no arquivo environment.prod.ts (caminho: “frontend-obelisco/src/environment”);
 
 ## Comando para gerar arquivos no Angular:
-Para a geração de componentes, serviços ou módulos. Basta a execução do comando:
+Para a geração de componentes, serviços ou módulos, basta a execução do comando:
 ```bash
 ng generate {c/s/m} [nome_do_arquivo]
 ```
